@@ -13,7 +13,7 @@ import Star from './stars/Star'
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-full">
+    <section className="relative w-full">
         <Blur className='absolute z-[-2] -top-5 left-20' />
 
         <div className='text-center sm:text-right text-xl sm:text-3xl mt-4'>
@@ -32,9 +32,7 @@ const Hero = () => {
         
 
         <div className='sm:absolute left-[150px] text-white text-center sm:text-left mt-9 sm:mt-14 max-w-[370px] sm:max-w-[500px] mx-auto'>
-            <div className='relative top-3 left-[270px] md:left-[350px]'>
-                <img className='w-[30px] md:w-[40px]' src={bulb} alt='/' />
-            </div>
+            <img className='relative top-3 left-[270px] md:left-[350px] w-[30px] md:w-[40px]' src={bulb} alt='/' />
             <h1 className='text-4xl sm:text-6xl font-bold'>
                 getlinked Tech
             </h1>
@@ -55,8 +53,8 @@ const Hero = () => {
         </div>
         
         <div className='relative mt-9 sm:mt-12'>
-            <img className='absolute z-[2] left-16 md:left-[640px] w-[410px] h-[410px] md:w-[600px] md:h-[600px]' src={bubble} alt='/' />
-            <img className='absolute right-0' src={man} alt='/' />
+            <img className='absolute z-[2] left-10 md:left-[690px] w-[410px] h-[410px] md:w-[550px] md:h-[550px]' src={bubble} alt='/' />
+            <img className='absolute right-0 md:w-[700px] h-[550px]' src={man} alt='/' />
         </div>
     </section>
   )
