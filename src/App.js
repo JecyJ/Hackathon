@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Page from "./pages/Page";
 import Transition from "./components/Transition";
 import { AnimatePresence } from "framer-motion";
+import Hero from "./components/Hero";
 
 
 
@@ -14,6 +15,7 @@ function App() {
       <BrowserRouter>
         <Transition />
         <Navbar />
+        <Hero />
         <Page />
       </BrowserRouter>
     </AnimatePresence>
