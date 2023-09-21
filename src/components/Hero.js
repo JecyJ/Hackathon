@@ -31,16 +31,16 @@ const Hero = () => {
 
         
 
-        <div className='sm:absolute left-[150px] text-white text-center sm:text-left mt-9 sm:mt-14 max-w-[370px] sm:max-w-[500px] mx-auto'>
-            <img className='relative top-3 left-[270px] md:left-[350px] w-[30px] md:w-[40px]' src={bulb} alt='/' />
-            <h1 className='text-4xl sm:text-6xl font-bold'>
+        <div className='sm:absolute lg:left-[150px] text-white text-center sm:text-left mt-9 sm:mt-14 max-w-[370px] sm:max-w-[500px] mx-auto'>
+            <img className='relative top-3 left-[270px] lg:left-[350px] w-[30px] md:w-[40px]' src={bulb} alt='/' />
+            <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold'>
                 getlinked Tech
             </h1>
-            <h1 className='flex w-full text-4xl sm:text-6xl font-bold items-center space-x-1 justify-center sm:justify-start'>
+            <h1 className='flex w-full text-4xl sm:text-5xl lg:text-6xl font-bold items-center space-x-1 justify-center sm:justify-start'>
                 Hackathon <span className='text-purple'>1.0</span>
                 <span>
-                <img className='w-[50px] md:w-[400px]' src={chain} alt='/' /></span>
-                <span className='w-[50px] md:w-[300px]'>
+                <img className='w-[50px] sm:w-[30] lg:w-[400px]' src={chain} alt='/' /></span>
+                <span className='w-[50px] sm:w-[30] lg:w-[300px]'>
                 <img src={fire} alt='/' />
                 </span>
             </h1>
@@ -54,7 +54,7 @@ const Hero = () => {
         
         <div className='relative mt-9 sm:mt-12'>
             <img className='absolute left-10 md:left-[690px] w-[410px] h-[410px] md:w-[550px] md:h-[550px]' src={bubble} alt='/' />
-            <img className='absolute z-[-2] right-0 md:w-[700px] h-[550px]' src={man} alt='/' />
+            <img className='absolute z-[-2] right-0 lg:w-[700px] h-[550px]' src={man} alt='/' />
         </div>
     </section>
   )
