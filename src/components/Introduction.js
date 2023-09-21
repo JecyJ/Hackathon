@@ -7,6 +7,7 @@ import arrow from '../images/arrow.png'
 import Judge from './Judge'
 import Rules from './Rules'
 import FAQs from './FAQs'
+import Partners from './Partners'
 
 
 const Introduction = () => {
@@ -42,6 +43,7 @@ const Introduction = () => {
       <img className='absolute left-[69px] top-[3950px] md:left-[956px] md:top-[2200px]' src={blur4} alt='/' />
 
       <FAQs />
+      <Partners />
     </section>
   )
 }
