@@ -1,6 +1,5 @@
 import {useState} from 'react'
 import {AiOutlinePlus} from 'react-icons/ai';
-// import {HiArrowNarrowUp} from 'react-icons/hi'
 import question from '../images/question.png'
 import star3 from '../images/star-3.png'
 import starpu from '../images/starpu.png'
@@ -12,21 +11,8 @@ function FAQs() {
     const [arrow2, setArrow2] = useState()
     const [arrow3, setArrow3] = useState()
     const [arrow4, setArrow4] = useState()
-    // const [backToTop, setBackToTop] = useState(false)
-    
-    // useEffect(() => {
-    //   window.addEventListener('scroll', () => {
-    //     if(window.scrollY >= 90) {
-    //       setBackToTop(true)
-    //     } else {
-    //       setBackToTop(false)
-    //     }
-    //   })
-    // }, [])
-
-    // function scrollToTop() {
-    //   window.scrollTo({top: 0, behavior: 'smooth'})
-    // }
+    const [arrow5, setArrow5] = useState()
+    const [arrow6, setArrow6] = useState()
   
     function Arrow1() {
       return setArrow1(prevArrow1 => !prevArrow1)
@@ -39,6 +25,12 @@ function FAQs() {
     }
     function Arrow4() {
       return setArrow4(prevArrow4 => !prevArrow4)
+    }
+    function Arrow5() {
+      return setArrow5(prevArrow4 => !prevArrow4)
+    }
+    function Arrow6() {
+      return setArrow6(prevArrow4 => !prevArrow4)
     }
 
 
@@ -67,13 +59,13 @@ function FAQs() {
                   <h3 className='flex items-center justify-between py-4 font-semibold border-t border-b border-purple'>Can I join a team or do I have to come with one? <AiOutlinePlus className='fill-purple' size={20} /></h3>
                   <p className={!arrow4 ? 'fixed hidden py-3 text-gray-700 ease-in-out duration-700': 'py-3 text-gray-700 ease-in-out duration-700'}>Very secure</p>
                 </div> 
-                <div onClick={Arrow2}>
+                <div onClick={Arrow5}>
                   <h3 className='flex items-center justify-between py-4 font-semibold border-t border-purple'>What happens after the hackathon ends <AiOutlinePlus className='fill-purple' size={20} /></h3>
-                  <p className={!arrow2 ? 'fixed hidden py-3 text-gray-700 ease-in-out duration-700': 'py-3 text-gray-700 ease-in-out duration-700'}>Very secure</p>
+                  <p className={!arrow5 ? 'fixed hidden py-3 text-gray-700 ease-in-out duration-700': 'py-3 text-gray-700 ease-in-out duration-700'}>Very secure</p>
                 </div>
-                <div onClick={Arrow2}>
+                <div onClick={Arrow6}>
                   <h3 className='flex items-center justify-between py-4 font-semibold border-t border-b border-purple'>Can I work on a project I started before the hackathon? <AiOutlinePlus className='fill-purple' size={20} /></h3>
-                  <p className={!arrow2 ? 'fixed hidden py-3 text-gray-700 ease-in-out duration-700': 'py-3 text-gray-700 ease-in-out duration-700'}>Very secure</p>
+                  <p className={!arrow6 ? 'fixed hidden py-3 text-gray-700 ease-in-out duration-700': 'py-3 text-gray-700 ease-in-out duration-700'}>Very secure</p>
                 </div>           
               </div>
         </div>
