@@ -9,7 +9,6 @@ import Timer from './Timer'
 import Star2 from './stars/Star2'
 import Blur from './purpleblur/Blur'
 import Star from './stars/Star'
-// import Blur2 from './purpleblur/Blur2'
 
 const Hero = () => {
   return (

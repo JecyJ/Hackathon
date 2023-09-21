@@ -1,4 +1,3 @@
-// import Hero from "../components/Hero";
 import Hero from "../components/Hero";
 import Introduction from "../components/Introduction";
 import Transition from "../components/Transition";
@@ -15,4 +14,3 @@ const Home = () => {
 }
 
 export default Home;
-// <Hero />

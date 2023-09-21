@@ -1,7 +1,7 @@
 import innovative from '../images/innovative.png'
 import Button2 from './Button2'
 import star3 from '../images/star-3.png'
-import starpu from '../images/starpu.png'
+import Star2 from '../images/star-2.png'
 
 const Judge = () => {
   return (
@@ -11,7 +11,7 @@ const Judge = () => {
           <img className='absolute top-3' src={star3} alt='/' />
         </div>
         <div className='relative col-span-6 flex flex-col justify-center space-y-3 md:max-w-[500px]'>
-          <img className='absolute top-12 right-4 md:top-40 md:right-10' src={starpu} alt='/' width={25} />
+          <img className='absolute top-12 right-4 md:top-48 lg:top-40 md:right-10' src={Star2} alt='/' width={25} />
           <h1 className='text-4xl font-bold'>Judging Criteria</h1>
           <h1 className='text-4xl text-purple font-bold'>Key Attributes</h1>
           <p className=''><span className='text-primarytwo'>Innovation and Creativity:</span> Evaluate the uniqueness and creativity of the solution. Consider whether it addresses a real-world problem in a novel way or introduces innovative features.</p>

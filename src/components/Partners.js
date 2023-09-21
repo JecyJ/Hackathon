@@ -7,7 +7,9 @@ const Partners = () => {
             <h1 className='text-3xl sm:text-4xl font-bold'>Partners and Sponsors</h1>
             <p className='text-lg'>Getlinked Hackathon 1.0 is honored to have the following major companies as its partners and sponsors</p>
         </div>
-        <img src={partners} alt="/" />
+        <div className='md:max-w-[800px] mx-auto'>
+            <img src={partners} alt="/" />
+        </div>
     </section>
   )
 }
