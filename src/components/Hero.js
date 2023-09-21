@@ -16,8 +16,8 @@ const Hero = () => {
         <Blur className='absolute z-[-2] -top-5 left-20' />
 
         <div className='text-center sm:text-right text-xl sm:text-3xl mt-4'>
-            <h1 className='text-white relative sm:right-24'>Igniting a Revolution in HR Innovation</h1>
-            <img className='right-24 sm:right-24 absolute w-[120px] sm:w-[190px]' src={line} alt="/" />
+            <h1 className='text-white relative lg:right-24'>Igniting a Revolution in HR Innovation</h1>
+            <img className='absolute right-24 md:right-0 lg:right-24 w-[120px] sm:w-[190px]' src={line} alt="/" />
         </div>
 
         <div>
