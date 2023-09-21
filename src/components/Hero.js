@@ -53,7 +53,7 @@ const Hero = () => {
         </div>
         
         <div className='relative mt-9 sm:mt-12'>
-            <img className='absolute left-10 md:left-[690px] w-[410px] h-[410px] md:w-[550px] md:h-[550px]' src={bubble} alt='/' />
+            <img className='absolute left-10 md:left-[350px] lg:left-[690px] w-[410px] h-[410px] lg:w-[550px] lg:h-[550px]' src={bubble} alt='/' />
             <img className='absolute z-[-2] right-0 lg:w-[700px] h-[550px]' src={man} alt='/' />
         </div>
     </section>
