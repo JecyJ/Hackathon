@@ -17,13 +17,13 @@ const MobileMenu = () => {
     };
     
   return (
-    <section>
+    <section className='h-auto w-full'>
         <div>
         <motion.nav
             initial={isOpen ? 'circle' : 'rectangle'}
             animate={isOpen ? 'rectangle' : 'circle'}
             variants={{
-            circle: { borderRadius: '50%', width: '50px', height: '50px', top: '10px', left: '370px' },
+            circle: { borderRadius: '50%', width: '50px', height: '50px', top: '10px', left: '340px' },
             rectangle: {
                 borderRadius: '0',
                 width: isOpen ? '100%' : '50px',
