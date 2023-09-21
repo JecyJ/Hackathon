@@ -28,12 +28,18 @@ const Introduction = () => {
       </div>
 
       
+      
+      <Rules /> 
+      
       <img className='absolute -left-14 top-[1800px] md:left-5 md:top-[1000px]' src={blur3} alt='/' />
 
-      <img className='absolute left-[119px] top-[1950px] md:left-[912px] md:top-[1000px]' src={blur4} alt='/' />
-      <Rules />     
+      <img className='absolute left-[80px] top-[1950px] md:left-[956px] md:top-[1000px]' src={blur4} alt='/' />
 
       <Judge />
+
+      <img className='absolute -left-14 top-[3800px] md:left-5 md:top-[1900px]' src={blur3} alt='/' />
+
+      <img className='absolute left-[80px] top-[3950px] md:left-[956px] md:top-[2200px]' src={blur4} alt='/' />
 
       <FAQs />
     </section>
