@@ -5,7 +5,7 @@ import star2 from '../images/star-2.png'
 
 const Privacy = () => {
   return (
-    <div className="grid md:grid-cols-12 space-y-4 md:space-y-0 mt-20">
+    <div className="grid md:grid-cols-12 space-y-4 md:space-y-0 mt-20 mb-[670px] md:mb-20">
       <div className='relative col-span-6 flex flex-col justify-center space-y-3 lg:max-w-[450px]'>
         <img className='absolute top-12 right-4 md:top-32 lg:top-40 md:right-10' src={starpu} alt='/' width={25} />
         <h1 className='text-4xl font-bold'>Privacy Policy and</h1>

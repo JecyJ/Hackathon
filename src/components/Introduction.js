@@ -10,6 +10,7 @@ import FAQs from './FAQs'
 import Partners from './Partners'
 import Privacy from './Privacy'
 import Prizes from './Prizes'
+import Timeline from './Timeline'
 
 
 const Introduction = () => {
@@ -45,6 +46,7 @@ const Introduction = () => {
       <img className='absolute z-[-2] left-[69px] top-[3950px] md:left-[454px] lg:left-[956px] md:top-[2200px]' src={blur4} alt='/' />
 
       <FAQs />
+      <Timeline />
       <Prizes />
       <Partners />
         <img className='absolute z-[-2] -left-14 top-[5600px] md:-left-32 lg:left-5 md:top-[3300px] lg:top-[1900px]' src={blur3} alt='/' />
