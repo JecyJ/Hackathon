@@ -23,7 +23,7 @@ const MobileMenu = () => {
             initial={isOpen ? 'circle' : 'rectangle'}
             animate={isOpen ? 'rectangle' : 'circle'}
             variants={{
-            circle: { borderRadius: '50%', width: '50px', height: '50px', top: '10px', left: '420px' },
+            circle: { borderRadius: '50%', width: '50px', height: '50px', top: '10px', left: '370px' },
             rectangle: {
                 borderRadius: '0',
                 width: isOpen ? '100%' : '50px',
