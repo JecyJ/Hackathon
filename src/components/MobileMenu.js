@@ -40,7 +40,7 @@ const MobileMenu = () => {
             <div>
                 <AiOutlineClose
                 onClick={handleToggle}
-                className='text-white absolute top-7 left-[420px]'
+                className='text-white absolute top-7 left-[340px]'
                 size={30}
                 />
                 <div className=' w-full h-full flex flex-col text-2xl justify-start text-white space-y-6'>
