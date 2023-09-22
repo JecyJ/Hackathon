@@ -1,8 +1,5 @@
-import question from '../images/question.png'
 import star3 from '../images/star-3.png'
-import starpu from '../images/starpu.png'
-import mark from '../images/mark.png'
-import mark2 from '../images/mark2.png'
+import star2 from '../images/star-2.png'
 import Transition from '../components/Transition';
 import {RiTwitterXFill} from 'react-icons/ri'
 import {AiOutlineInstagram} from 'react-icons/ai'
@@ -127,6 +124,10 @@ function Contact() {
                   <BiLogoLinkedin size={20} />
                 </div>
               </div>
+              <img className='absolute -bottom-[100px] left-20' src={star3} alt='/' />
+              <img className='absolute -bottom-[200px] right-28' src={star2} alt='/' />
+              <img className='absolute top-[150px] right-20' src={star3} alt='/' />
+              <img className='absolute top-[100px] left-20' src={star2} alt='/' />
             </form>
             
           </div>
@@ -136,17 +137,3 @@ function Contact() {
 }
 
 export default Contact;
-
-<div className=" w-full h-full  mt-28 items-center ">
-<Transition />
-
-<div className='relative col-span-6 w-full'>
-            <img className='w-full h-full' src={question} alt='/' />
-            <img className='absolute -top-14 right-56 md:right-64 w-10 h-15' src={mark} alt='/' />
-            <img className='absolute -top-8 right-[300px] md:right-[340px] w-8 h-12' src={mark2} alt='/' />
-            <img className='absolute -top-8 right-[150px] md:right-[170px] w-8 h-12' src={mark2} alt='/' />
-            <img className='absolute top-3' src={star3} alt='/' />
-          </div>
-
-
-</div>
