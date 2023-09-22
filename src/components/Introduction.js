@@ -46,12 +46,18 @@ const Introduction = () => {
       <img className='absolute z-[-2] left-[69px] top-[3950px] md:left-[454px] lg:left-[956px] md:top-[2200px]' src={blur4} alt='/' />
 
       <FAQs />
+
+      <img className='absolute z-[-2] -left-14 top-[5600px] md:-left-32 lg:left-5 md:top-[3300px] lg:top-[1900px]' src={blur3} alt='/' />
+
+        <img className='absolute z-[-2] left-[69px] top-[5950px] md:left-[454px] lg:left-[956px] md:top-[4100px]' src={blur4} alt='/' />
+
       <Timeline />
       <Prizes />
       <Partners />
-        <img className='absolute z-[-2] -left-14 top-[5600px] md:-left-32 lg:left-5 md:top-[3300px] lg:top-[1900px]' src={blur3} alt='/' />
+        
+      <img className='absolute z-[-2] -left-14 top-[7600px] md:-left-32 lg:left-5 md:top-[6300px] lg:top-[5900px]' src={blur3} alt='/' />
 
-        <img className='absolute z-[-2] left-[69px] top-[5950px] md:left-[454px] lg:left-[956px] md:top-[4100px]' src={blur4} alt='/' />
+      <img className='absolute z-[-2] left-[69px] top-[7950px] md:left-[454px] lg:left-[956px] md:top-[5800px]' src={blur4} alt='/' />
 
       <Privacy />
     </section>

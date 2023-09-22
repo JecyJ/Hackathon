@@ -1,5 +1,5 @@
+import { motion } from "framer-motion";
 import Button from "./Button";
-// import {CgMenuRight} from 'react-icons/cg'
 import MobileMenu from "./MobileMenu";
 import {Link} from 'react-router-dom'
 
@@ -18,7 +18,13 @@ const Navbar = () => {
           <h2>Overview</h2>
           <h2>FAQs</h2>
           <Link to={'/contact'}>
-            <h2>Contact</h2>
+            <motion.h2 
+              initial={{opacity: 0}}
+              animate={{opacity:1, transition:{duration:1.5}}}
+              whileTap={{scale:0.8}}
+            >
+              Contact
+            </motion.h2>
           </Link>
           <div>
             <Link to={'/register'}>

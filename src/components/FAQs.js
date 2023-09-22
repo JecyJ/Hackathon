@@ -81,15 +81,3 @@ function FAQs() {
 }
 
 export default FAQs;
-
-<div>
-        <div className='max-w-[450px] mx-auto md:max-w-[1250px] md:mx- h-full pt-10'>
-          <div className='block md:flex md:flex-row items-center'>
-            <div className='md:max-w-[625px]'>
-              <h3 className='text-[#3984F4] text-lg px-5 font-semibold mb-4'>SUPPORT</h3>
-              <h1 className='text-center md:text-left md:px-5 text-4xl font-semibold mb-10'>Frequently asked  questions</h1>
-              
-            </div>               
-          </div>          
-        </div>      
-      </div>
