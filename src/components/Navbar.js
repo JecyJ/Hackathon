@@ -27,7 +27,7 @@ const Navbar = () => {
             </motion.h2>
           </Link>
           <div>
-            <Link to={'/register'}>
+            <Link to={'/registeration'}>
               <Button text='Register' />
             </Link>
           </div>

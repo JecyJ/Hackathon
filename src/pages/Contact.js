@@ -21,7 +21,7 @@ function Contact() {
     message: '',
   });
 
-  const [submissionStatus, setSubmissionStatus] = useState(null); // Initially, no submission
+  const [submissionStatus, setSubmissionStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,7 +45,7 @@ function Contact() {
 
       if (response.ok) {
         console.log('Form data submitted successfully.');
-        setSubmissionStatus('Submitted'); // Update submission status
+        setSubmissionStatus('Submitted');
         setFormData({
           first_name: '',
           email: '',
@@ -57,11 +57,11 @@ function Contact() {
         }, 3000);
       } else {
         console.error('Form data submission failed.');
-        setSubmissionStatus('Submission Failed'); // Update submission status
+        setSubmissionStatus('Submission Failed');
       }
     } catch (error) {
       console.error('An error occurred while submitting the form data:', error);
-      setSubmissionStatus('Submission Error'); // Update submission status
+      setSubmissionStatus('Submission Error');
     }
   };
 

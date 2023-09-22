@@ -51,7 +51,7 @@ const MobileMenu = () => {
                         <h2>Contact</h2>
                     </Link>
                     <div>
-                        <Link to={'/register'} onClick={handleClose}>
+                        <Link to={'/registeration'} onClick={handleClose}>
                             <Button2 text='Register' />
                         </Link>
                     </div>
