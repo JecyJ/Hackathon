@@ -34,7 +34,7 @@ function Contact() {
 
 
     return (
-      <section className='w-full h-full my-20 max-w-[400px] sm:max-w-[600px] md:max-w-[1100px] m-auto'>
+      <section className='w-full h-full my-20 max-w-[400px] sm:max-w-[600px] md:max-w-[1100px] m-auto md:px-3'>
         <Transition />
         <div className='grid md:grid-cols-12'>        
           <div className='hidden md:grid col-span-6 text-white space-y-4 max-h-[400px]'>

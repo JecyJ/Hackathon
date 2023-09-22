@@ -15,7 +15,7 @@ import Timeline from './Timeline'
 
 const Introduction = () => {
   return (
-    <section className='w-full h-full mt-[650px] text-white max-w-[400px] sm:max-w-[600px] md:max-w-[1100px] m-auto'>
+    <section className='w-full h-full mt-[650px] text-white max-w-[400px] sm:max-w-[600px] md:max-w-[1100px] m-auto md:px-3'>
 
       <div className="grid md:grid-cols-12 space-y-4 md:space-y-0">
         <div className='relative col-span-6 w-full'>
