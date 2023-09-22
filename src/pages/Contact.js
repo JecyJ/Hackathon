@@ -10,13 +10,18 @@ import Button2 from '../components/Button2'
 import blur3 from '../images/blur3.png'
 import blur4 from '../images/blur4.png'
 
+
+const baseUrl = 'https://backend.getlinked.ai';
+
 function Contact() {
 
   const [formData, setFormData] = useState({
-    name: '',
+    first_name: '',
     email: '',
     message: '',
   });
+
+  const [submissionStatus, setSubmissionStatus] = useState(null); // Initially, no submission
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,10 +31,38 @@ function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You can add your form submission logic here
-    console.log(formData);
+
+    try {
+      const response = await fetch(`${baseUrl}/hackathon/contact-form`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log('Form data submitted successfully.');
+        setSubmissionStatus('Submitted'); // Update submission status
+        setFormData({
+          first_name: '',
+          email: '',
+          message: '',
+        });
+
+        setTimeout(() => {
+          setSubmissionStatus(null);
+        }, 3000);
+      } else {
+        console.error('Form data submission failed.');
+        setSubmissionStatus('Submission Failed'); // Update submission status
+      }
+    } catch (error) {
+      console.error('An error occurred while submitting the form data:', error);
+      setSubmissionStatus('Submission Error'); // Update submission status
+    }
   };
 
 
@@ -72,12 +105,12 @@ function Contact() {
                 </label>
                 <input
                   type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
+                  id="first_name"
+                  name="first_name"
+                  value={formData.first_name}
                   onChange={handleChange}
-                  placeholder="Your Name"
-                  className="w-full px-3 py-2 border rounded-lg border-gray-300 focus:outline-none focus:border-indigo-500 bg-dark"
+                  placeholder="First Name"
+                  className="w-full px-3 py-2 border rounded-lg border-gray-300 focus:outline-none focus:border-indigo-500 bg-dark text-white"
                   required
                 />
               </div>
@@ -92,7 +125,7 @@ function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Your Email"
-                  className="w-full px-3 py-2 border rounded-lg border-gray-300 focus:outline-none focus:border-indigo-500 bg-dark"
+                  className="w-full px-3 py-2 border rounded-lg border-gray-300 focus:outline-none focus:border-indigo-500 bg-dark text-white"
                   required
                 />
               </div>
@@ -107,13 +140,17 @@ function Contact() {
                   onChange={handleChange}
                   placeholder="Your Message"
                   rows="4"
-                  className="w-full px-3 py-2 border rounded-lg border-gray-300 focus:outline-none focus:border-indigo-500 bg-dark"
+                  className="w-full px-3 py-2 border rounded-lg border-gray-300 focus:outline-none focus:border-indigo-500 bg-dark text-white"
                   required
                 />
               </div>
               <div className="text-center">
                 <Button2 text='Submit' />
               </div>
+
+              {submissionStatus === 'Submitted' && (
+                <p className="text-green-500 text-center mt-2">Submitted</p>
+              )}
 
               <div className='md:hidden space-y-2 text-center text-white mt-10'>
                 <p className="text-purple">Share on</p>
