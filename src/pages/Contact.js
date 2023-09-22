@@ -124,7 +124,7 @@ function Contact() {
                   <BiLogoLinkedin size={20} />
                 </div>
               </div>
-              <img className='absolute -bottom-[100px] left-20' src={star3} alt='/' />
+              <img className='absolute -bottom-[130px] left-20' src={star3} alt='/' />
               <img className='absolute -bottom-[200px] right-28' src={star2} alt='/' />
               <img className='absolute top-[150px] right-20' src={star3} alt='/' />
               <img className='absolute top-[100px] left-20' src={star2} alt='/' />
