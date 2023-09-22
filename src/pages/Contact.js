@@ -5,31 +5,25 @@ import {RiTwitterXFill} from 'react-icons/ri'
 import {AiOutlineInstagram} from 'react-icons/ai'
 import {BiLogoLinkedin} from 'react-icons/bi'
 import {FaFacebookF} from 'react-icons/fa'
-import { useState } from 'react'
 import Button2 from '../components/Button2'
 import blur3 from '../images/blur3.png'
 import blur4 from '../images/blur4.png'
+import { useSelector, useDispatch } from 'react-redux';
+import { setFormData, setSubmissionStatus } from '../components/stores/ContactSlice'; 
 
 
 const baseUrl = 'https://backend.getlinked.ai';
 
 function Contact() {
-
-  const [formData, setFormData] = useState({
-    first_name: '',
-    email: '',
-    message: '',
-  });
-
-  const [submissionStatus, setSubmissionStatus] = useState(null);
+  const formData = useSelector((state) => state.contact.formData);
+  const submissionStatus = useSelector((state) => state.contact.submissionStatus);
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    dispatch(setFormData({ ...formData, [name]: value }));
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();

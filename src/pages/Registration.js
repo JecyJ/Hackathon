@@ -1,40 +1,40 @@
-import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  updateFormData,
+  toggleAgreement,
+  setSubmissionStatus,
+  resetForm,
+  fetchCategories
+} from '../components/stores/RegistrationSlice';
 import Transition from '../components/Transition';
 import Button3 from '../components/Button3';
 import designer from '../images/graphic-designer.png'
+import { useEffect } from 'react';
 
 const baseUrl = 'https://backend.getlinked.ai';
 
 function Registration() {
-  const [formData, setFormData] = useState({
-    team_name: '',
-    phone_number: '',
-    email: '',
-    project_topic: '',
-    category: '',
-    group_size: '',
-  });
+    const formData = useSelector((state) => state.registration.formData);
+    const policy = useSelector((state) => state.registration.policy);
+    const submissionStatus = useSelector((state) => state.registration.submissionStatus);
+    const categories = useSelector((state) => state.registration.categories);
+  
+    const dispatch = useDispatch();
 
-//   const [agreedToTerms, setAgreedToTerms] = useState(false);
-  const [policy, setPolicy] = useState(false);
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        dispatch(updateFormData({ fieldName: name, fieldValue: value }));
+    };
 
-  const [submissionStatus, setSubmissionStatus] = useState(null);
+    const handlePolicyCheckbox = () => {
+        dispatch(toggleAgreement('policy'));
+    };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+    useEffect(() => {
+        dispatch(fetchCategories());
+      }, [dispatch]);
 
-//   const handleTermsCheckboxChange = () => {
-//     setAgreedToTerms(!agreedToTerms);
-//   };
 
-  const handlePolicyCheckbox = () => {
-    setPolicy(!policy);
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,50 +45,44 @@ function Registration() {
     }
 
     try {
-      const response = await fetch(`${baseUrl}/hackathon/registration-form`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        console.log('Registration data submitted successfully.');
-        setSubmissionStatus('Submitted');
-        setFormData({
-          team_name: '',
-          phone_number: '',
-          email: '',
-          project_topic: '',
-          category: '',
-          group_size: '',
+        const response = await fetch(`${baseUrl}/hackathon/registration-form`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
         });
-
-        setTimeout(() => {
-          setSubmissionStatus(null);
-        }, 3000);
-      } else {
-        console.error('Registration data submission failed.');
-        setSubmissionStatus('Submission Failed');
+  
+        if (response.ok) {
+          console.log('Registration data submitted successfully.');
+          dispatch(setSubmissionStatus('Submitted'));
+          dispatch(resetForm());
+  
+          setTimeout(() => {
+            dispatch(setSubmissionStatus(null));
+          }, 3000);
+        } else {
+          console.error('Registration data submission failed.');
+          dispatch(setSubmissionStatus('Submission Failed'));
+        }
+      } catch (error) {
+        console.error('An error occurred while submitting the registration data:', error);
+        dispatch(setSubmissionStatus('Submission Error'));
       }
-    } catch (error) {
-      console.error('An error occurred while submitting the registration data:', error);
-      setSubmissionStatus('Submission Error');
-    }
-  };
+    };
+  
 
   return (
     <section className='w-full h-full my-20 max-w-[400px] sm:max-w-[600px] md:max-w-[1100px] m-auto md:px-3'>
       <Transition />
       <div className='grid md:grid-cols-12'>
 
-        <div className='col-span-6 space-y-4'>
-            <h2 className='md:hidden text-purple text-2xl font-semibold'>Registration Form</h2>
-            <img className='mx-auto h-[300px] md:h-full' src={designer} alt='/' />
+        <div className='col-span-5 space-y-4'>
+            <h2 className='md:hidden text-purple text-center text-2xl font-semibold'>Registration Form</h2>
+            <img className='mx-auto h-[300px] md:h-[500px]' src={designer} alt='/' />
         </div>
-        {/* ... (Existing code for contact information and social media icons) */}
-        <div className='w-full h-full col-span-6 border-2 border-primaryone bg-black/20 rounded-xl border-solid p-10 md:p-20 space-y-3'>
+
+        <div className='w-full h-full col-span-7 border-2 border-primaryone bg-black/20 rounded-xl border-solid p-10 md:p-20 space-y-3'>
           <h2 className='hidden md:block text-purple text-2xl font-semibold'>Registration Form</h2>
           <form onSubmit={handleSubmit}>
             <div className='flex justify-between space-x-3 md:space-x-6'>            
@@ -157,19 +151,26 @@ function Registration() {
             </div>
             <div className='flex justify-between space-x-3 md:space-x-6'>            
                 <div className="mb-4">
-                <label htmlFor="category" className="block text-gray-700 text-sm font-bold mb-2">
+                    <label htmlFor="category" className="block text-gray-700 text-sm font-bold mb-2">
                     Category
-                </label>
-                <input
-                    type="text"
+                    </label>
+                    <select
                     id="category"
                     name="category"
                     value={formData.category}
                     onChange={handleChange}
-                    placeholder="Category"
                     className="w-full px-3 py-2 border rounded-lg border-gray-300 focus:outline-none focus:border-indigo-500 bg-dark text-white"
                     required
-                />
+                    >
+                    <option value="" disabled>
+                        Select a category
+                    </option>
+                    {categories.map((category) => (
+                        <option key={category.id} value={category}>
+                        {category}
+                        </option>
+                    ))}
+                    </select>
                 </div>
                 <div className="mb-4">
                 <label htmlFor="group_size" className="block text-gray-700 text-sm font-bold mb-2">
@@ -209,7 +210,6 @@ function Registration() {
               <p className="text-green-500 text-center mt-2">Submitted</p>
             )}
           </form>
-          {/* ... (Existing code for social media icons and background images) */}
         </div>
       </div>
     </section>
