@@ -176,7 +176,7 @@ function Registration() {
                     required
                     >
                     <option value="" disabled>
-                        Select a category
+                        Category
                     </option>
                     {categories.map((category) => (
                         <option key={category.id} value={category.id}>
