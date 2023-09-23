@@ -20,7 +20,7 @@ const Timer = () => {
   const seconds = currentTime.getSeconds();
 
   return (
-    <div className="text-4xl font-bold text-center sm:text-left lg:text-center mt-8">
+    <div className="text-4xl font-bold text-center md:text-left mt-8">
       <span>{formatTime(hours)}</span>
       <span className="text-xs text-gray-600">H</span>
       {" : "}
