@@ -12,8 +12,8 @@ const Prizes = () => {
             </div>
             </div>
         <div className='grid md:grid-cols-12 space-y-14 md:space-y-[170px]'>
-        <img className='col-span-6 w-[600px]' src={trophy} alt="/" />
-        <img className='col-span-6 w-[600px]' src={medals} alt="/" />
+        <img className='col-span-6 w-[600px]' src={trophy} alt="/" loading="eager" />
+        <img className='col-span-6 w-[600px]' src={medals} alt="/" loading="eager" />
         </div>
     </section>
   )

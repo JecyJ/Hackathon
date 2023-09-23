@@ -52,13 +52,11 @@ const Hero = () => {
         </div>
         
         <div className='relative mt-9 sm:mt-12'>
-            <img className='absolute left-10 md:left-[350px] lg:left-[690px] w-[410px] h-[410px] lg:w-[550px] lg:h-[550px]' src={bubble} alt='/' />
-            <img className='absolute z-[-2] right-0 lg:w-[700px] h-[550px]' src={man} alt='/' />
+            <img className='absolute left-10 md:left-[350px] lg:left-[690px] w-[410px] h-[410px] lg:w-[550px] lg:h-[550px]' src={bubble} alt='/' loading="eager" />
+            <img className='absolute z-[-2] right-0 lg:w-[700px] h-[550px]' src={man} alt='/' loading="eager" />
         </div>
     </section>
   )
 }
 
 export default Hero;
-
-// <Blur2 className='absolute z-[2] md:top-10 md:left-[820px]' />

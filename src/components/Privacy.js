@@ -27,8 +27,8 @@ const Privacy = () => {
       <div className='relative col-span-6 w-full'>
         <img className='absolute top-12 right-4 md:top-32 lg:top-40 md:right-10' src={star2} alt='/' width={25} />
         <img className='absolute top-12 left-5 md:top-32 lg:top-40 md:right-[300px]' src={star2} alt='/' width={25} />
-        <img className='absolute' src={security} alt='/' />
-        <img className='absolute top-28' src={privacy} alt='/' />
+        <img className='absolute' src={security} alt='/' loading="eager" />
+        <img className='absolute top-28' src={privacy} alt='/' loading="eager" />
       </div>
     </div>
   )

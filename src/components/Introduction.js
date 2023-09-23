@@ -19,7 +19,7 @@ const Introduction = () => {
 
       <div className="grid md:grid-cols-12 space-y-4 md:space-y-0">
         <div className='relative col-span-6 w-full'>
-          <img src={idea} alt='/' />
+          <img src={idea} alt='/' loading="eager" />
           <img className='absolute top-3' src={star3} alt='/' />
           <img className='absolute bottom-[1px] w-7 md:w-16 md:-bottom-6 lg:bottom-3 left-[150px] lg:left-[450px]' src={arrow} alt='/' />
         </div>

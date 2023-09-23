@@ -63,7 +63,7 @@ function FAQs() {
         </div>
       </div>
       <div className='relative col-span-6 w-full'>
-        <img className='w-full h-full' src={question} alt='/' />
+        <img className='w-full h-full' src={question} alt='/' loading="eager" />
         <img className='absolute -top-14 right-56 md:right-64 w-10 h-15' src={mark} alt='/' />
         <img className='absolute -top-8 right-[300px] md:right-[340px] w-8 h-12' src={mark2} alt='/' />
         <img className='absolute -top-8 right-[150px] md:right-[170px] w-8 h-12' src={mark2} alt='/' />

@@ -7,7 +7,7 @@ const Judge = () => {
   return (
     <div className="grid md:grid-cols-12 space-y-4 md:space-y-0 mt-8 items-center">
         <div className='relative col-span-6 w-full'>
-          <img className='w-full h-full' src={innovative} alt='/' />
+          <img className='w-full h-full' src={innovative} alt='/' loading="eager" />
           <img className='absolute top-3' src={star3} alt='/' />
         </div>
         <div className='relative col-span-6 flex flex-col justify-center space-y-3 md:max-w-[500px]'>
