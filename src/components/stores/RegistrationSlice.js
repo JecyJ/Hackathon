@@ -12,7 +12,7 @@ export const fetchCategories = createAsyncThunk(
       }
 
       const data = await response.json();
-      return data; // Return the entire response data.
+      return data;
     } catch (error) {
       throw new Error('Failed to fetch categories');
     }
@@ -31,7 +31,6 @@ const registrationSlice = createSlice({
       group_size: '',
     },
     policy: false,
-    submissionStatus: null,
     categories: [],
     categoriesStatus: 'idle',
     categoriesError: null,
@@ -44,9 +43,6 @@ const registrationSlice = createSlice({
       if (action.payload === 'policy') {
         state.policy = !state.policy;
       } 
-    },
-    setSubmissionStatus: (state, action) => {
-      state.submissionStatus = action.payload;
     },
     setCategories: (state, action) => {
       state.categories = action.payload;
@@ -61,7 +57,6 @@ const registrationSlice = createSlice({
         group_size: '',
       };
       state.policy = false;
-      state.submissionStatus = null;
     },
   },
   extraReducers: (builder) => {
@@ -83,7 +78,6 @@ const registrationSlice = createSlice({
 export const {
   updateFormData,
   toggleAgreement,
-  setSubmissionStatus,
   resetForm,
   setCategories,
 } = registrationSlice.actions;
