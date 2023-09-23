@@ -45,7 +45,7 @@ function Registration() {
     }
 
     try {
-        const response = await fetch(`${baseUrl}/hackathon/registration-form`, {
+        const response = await fetch(`${baseUrl}/hackathon/registration`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -166,8 +166,8 @@ function Registration() {
                         Select a category
                     </option>
                     {categories.map((category) => (
-                        <option key={category.id} value={category}>
-                        {category}
+                        <option key={category.id} value={category.id}>
+                        {category.id}
                         </option>
                     ))}
                     </select>

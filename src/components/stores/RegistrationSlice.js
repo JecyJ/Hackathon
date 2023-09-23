@@ -5,11 +5,15 @@ const baseUrl = 'https://backend.getlinked.ai';
 export const fetchCategories = createAsyncThunk(
   'registration/fetchCategories',
   async () => {
-    const response = await fetch(`${baseUrl}/hackathon/categories-list`);
-    if (response.ok) {
+    try {
+      const response = await fetch(`${baseUrl}/hackathon/categories-list`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch categories');
+      }
+
       const data = await response.json();
-      return data.categories;
-    } else {
+      return data; // Return the entire response data.
+    } catch (error) {
       throw new Error('Failed to fetch categories');
     }
   }
