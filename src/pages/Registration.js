@@ -2,22 +2,29 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   updateFormData,
   toggleAgreement,
-  setSubmissionStatus,
+  // setSubmissionStatus,
   resetForm,
   fetchCategories
 } from '../components/stores/RegistrationSlice';
 import Transition from '../components/Transition';
 import Button3 from '../components/Button3';
 import designer from '../images/graphic-designer.png'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import success from '../images/success.png'
+import boy from '../images/happyboy.png'
+import blur3 from '../images/blur3.png'
+import blur4 from '../images/blur4.png'
+import star3 from '../images/star-3.png'
+import star2 from '../images/star-2.png'
 
 const baseUrl = 'https://backend.getlinked.ai';
 
 function Registration() {
     const formData = useSelector((state) => state.registration.formData);
     const policy = useSelector((state) => state.registration.policy);
-    const submissionStatus = useSelector((state) => state.registration.submissionStatus);
+    // const submissionStatus = useSelector((state) => state.registration.submissionStatus);
     const categories = useSelector((state) => state.registration.categories);
+    const [showSubmittedCard, setShowSubmittedCard] = useState(false);
   
     const dispatch = useDispatch();
 
@@ -55,21 +62,23 @@ function Registration() {
   
         if (response.ok) {
           console.log('Registration data submitted successfully.');
-          dispatch(setSubmissionStatus('Submitted'));
+          // dispatch(setSubmissionStatus('Submitted'));
           dispatch(resetForm());
-  
-          setTimeout(() => {
-            dispatch(setSubmissionStatus(null));
-          }, 3000);
+
+          setShowSubmittedCard(true);
         } else {
           console.error('Registration data submission failed.');
-          dispatch(setSubmissionStatus('Submission Failed'));
+          // dispatch(setSubmissionStatus('Submission Failed'));
         }
       } catch (error) {
         console.error('An error occurred while submitting the registration data:', error);
-        dispatch(setSubmissionStatus('Submission Error'));
+        // dispatch(setSubmissionStatus('Submission Error'));
       }
     };
+
+    const handleGoBack = () => {
+      setShowSubmittedCard(false);
+    }
   
 
   return (
@@ -81,6 +90,10 @@ function Registration() {
             <h2 className='md:hidden text-purple text-center text-2xl font-semibold'>Registration Form</h2>
             <img className='mx-auto h-[300px] md:h-[500px]' src={designer} alt='/' />
         </div>
+
+        <img className='absolute z-[-2] -left-14 -top-16 md:-left-32 lg:left-5 md:-top-20' src={blur3} alt='/' />
+
+          <img className='absolute z-[-2] left-[69px] top-38 md:left-[454px] lg:left-[956px] md:top-20' src={blur4} alt='/' />
 
         <div className='w-full h-full col-span-7 border-2 border-primaryone bg-black/20 rounded-xl border-solid p-10 md:p-20 space-y-3'>
           <h2 className='hidden md:block text-purple text-2xl font-semibold'>Registration Form</h2>
@@ -206,12 +219,31 @@ function Registration() {
             <div className="text-center w-full">
               <Button3 text='Register Now' />
             </div>
-            {submissionStatus === 'Submitted' && (
-              <p className="text-green-500 text-center mt-2">Submitted</p>
-            )}
+
+            <img className='absolute -bottom-[130px] left-20' src={star3} alt='/' />
+              <img className='absolute -bottom-[200px] right-28' src={star2} alt='/' />
+              <img className='absolute top-[150px] right-20' src={star3} alt='/' />
+              <img className='absolute top-[100px] left-20' src={star2} alt='/' />
           </form>
         </div>
       </div>
+
+      {/* Submitted Card */}
+      {showSubmittedCard && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+          <div className="absolute w-full bg-dark p-4 md:p-10 rounded-lg border border-primaryone shadow-md max-w-[380px] md:max-w-[700px] m-auto">
+            <div className='flex items-center justify-center'>
+              <img className='relative right-6 md:right-12' src={success} alt='/' />
+              <img className='absolute top-12 left-20 md:top-20 md:left-[250px]' src={boy} alt='/' />
+            </div>
+            <div className='space-y-3 mt-6 md:mt-12'>
+              <h1 className='text-white text-2xl font-semibold text-center'>Congratulations <br /> you have successfully Registered!</h1>
+              <p className="text-sm text-white text-center">Yes, it was easy and you did it! check your mail box for next step</p>
+              <Button3 text='Back' onClick={handleGoBack} />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
@@ -219,7 +251,9 @@ function Registration() {
 export default Registration;
 
 
-
+// {submissionStatus === 'Submitted' && (
+            //   <p className="text-green-500 text-center mt-2">Submitted</p>
+            // )}
 
 
 
